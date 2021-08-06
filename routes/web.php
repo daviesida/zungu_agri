@@ -15,8 +15,13 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'index']);
-Route::get('/add_farm', [PagesController::class, 'add_farm']);
 Route::get('/home', [PagesController::class, 'home']);
+
+//Farm Routes
+Route::get('/add_farm', [PagesController::class, 'add_farm']);
+Route::get('/view_farm', [PagesController::class, 'view_farm']);
+
+//Crop Routes
 Route::get('/add_crop', [PagesController::class, 'add_crop']);
 Route::get('/add_crop_pesticide', [PagesController::class, 'add_crop_pesticide']);
 Route::get('/add_crop_pests', [PagesController::class, 'add_crop_pests']);

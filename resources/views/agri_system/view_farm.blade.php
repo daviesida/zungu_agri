@@ -252,87 +252,175 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center" >
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Pesticide Details</h1> <hr />
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title"></h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form" action="{{action('App\Http\Controllers\CropPesticideController@store')}}" method="POST">
-              @csrf
+     <!-- Main content -->
+     <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Expandable Table</h3>
+                </div>
+                <!-- ./card-header -->
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Pesticide Name</label>
-                    <input type="text" name="pesticidname" class="form-control" id="exampleInputEmail1" placeholder="Enter Pesticide name">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Pesticide Supplier Name</label>
-                    <input type="text" name="supplier" class="form-control" id="exampleInputEmail1" placeholder="Enter Pesticide Supplier">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Pesticide Description</label>
-                    <input type="text" name="pesticide_desc" class="form-control" id="exampleInputEmail1" placeholder="Enter Pesticide Description">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Crop related to this Pesticide</label>
-                    <select name="crop_id" class="form-control">
-                      <option value="crop_id1">crop_id</option>
-                      <option value="crop_id2">crop_id</option>
-                      <option value="crop_id3">crop_id</option>
-                      <option value="crop_id4">crop_id</option>
-                      <option value="crop_id5">crop_id</option>
-                    </select>
-                  </div>
-
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>183</td>
+                        <td>John Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Approved</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="true">
+                        <td>219</td>
+                        <td>Alexander Pierce</td>
+                        <td>11-7-2014</td>
+                        <td>Pending</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="true">
+                        <td>657</td>
+                        <td>Alexander Pierce</td>
+                        <td>11-7-2014</td>
+                        <td>Approved</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>175</td>
+                        <td>Mike Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Denied</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>134</td>
+                        <td>Jim Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Approved</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>494</td>
+                        <td>Victoria Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Pending</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>832</td>
+                        <td>Michael Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Approved</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                        <td>982</td>
+                        <td>Rocky Doe</td>
+                        <td>11-7-2014</td>
+                        <td>Denied</td>
+                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      </tr>
+                      <tr class="expandable-body">
+                        <td colspan="5">
+                          <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+              </div>
+              <!-- /.card -->
+  
             </div>
-          </div><!-- /.col -->
-
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
-
-          </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+              <!-- Form Element sizes -->
+              <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">Different Height</h3>
+                </div>
+                <div class="card-body">
+                  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+                  <br>
+                  <input class="form-control" type="text" placeholder="Default input">
+                  <br>
+                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -381,6 +469,7 @@
 <script src="{{asset('agri_system/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('agri_system/dist/js/adminlte.js')}}"></script>
+<script src="{{asset('agri_system/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('agri_system/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->

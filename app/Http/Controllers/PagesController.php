@@ -13,15 +13,23 @@ class PagesController extends Controller
 
     // End Routes to website
 
-    // Start Routes to System
+    // Start Routes to System-------------------------------------------
+    public function home(){
+        return view('agri_system.home');
+    }
+    
+    //Routes to Farm
     public function add_farm(){
         return view('agri_system.add_farm');
     }
 
-    public function home(){
-        return view('agri_system.home');
+    public function view_farm(){
+        return view('agri_system.view_farm');
     }
 
+    
+
+    //Route to Crop
     public function add_crop(){
         return view('agri_system.add_crop');
     }

@@ -45,9 +45,9 @@ class cropController extends Controller
         $crop->fertilizer=$request->input('fertilizer');
         $crop->period=$request->input('season');
  
-         if($farm->save()==TRUE){
-             $message='Farm Registered successfully';
-             return redirect('/add_farm');    
+         if($crop->save()==TRUE){
+             $message='Crop Registered successfully';
+             return redirect('add_crop');    
          }
          else{
              echo 'adff';

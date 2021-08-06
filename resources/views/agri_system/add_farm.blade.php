@@ -258,12 +258,6 @@
         <div class="d-flex justify-content-center" >
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Add Farm Details</h1> <hr />
-            
-            @isset($message)
-            <div class="alert alert-success">
-            <strong>{{$message}}</strong>
-            </div>
-            @endif
 
             <div class="card card-primary">
               <div class="card-header">

@@ -16,8 +16,8 @@ class CreatePesticideRatesTable extends Migration
         Schema::create('pesticide_rates', function (Blueprint $table) {
             $table->id();
             $table->string('rate');
-            $table->id('userID');
-            $table->id('pesticideID');
+            $table->integer('userID');
+            $table->integer('pesticideID');
             $table->timestamps();
         });
     }

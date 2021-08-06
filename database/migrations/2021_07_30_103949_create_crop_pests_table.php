@@ -17,8 +17,8 @@ class CreateCropPestsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->int('cropID');
-            $table->int('pesticideID');
+            $table->integer('cropID');
+            $table->integer('pesticideID');
             $table->timestamps();
         });
     }

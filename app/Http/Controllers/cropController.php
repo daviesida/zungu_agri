@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CropResource;
+use App\Models\Crop;
 use Illuminate\Http\Request;
 
 class cropController extends Controller
@@ -34,7 +36,22 @@ class cropController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $crop= new Crop();
+
+        $crop->crop_name=$request->input('crop_name');
+        $crop->soil_type=$request->input('soil_type');
+        $crop->rainfall=$request->input('rainfall');
+        $crop->temperature=$request->input('temperature_level');
+        $crop->fertilizer=$request->input('fertilizer');
+        $crop->period=$request->input('season');
+ 
+         if($farm->save()==TRUE){
+             $message='Farm Registered successfully';
+             return redirect('/add_farm');    
+         }
+         else{
+             echo 'adff';
+         }
     }
 
     /**

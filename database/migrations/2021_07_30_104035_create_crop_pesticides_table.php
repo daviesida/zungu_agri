@@ -18,7 +18,7 @@ class CreateCropPesticidesTable extends Migration
             $table->string('name');
             $table->string('supplier');
             $table->string('description');
-            $table->int('cropID');
+            $table->integer('cropID');
             $table->timestamps();
         });
     }

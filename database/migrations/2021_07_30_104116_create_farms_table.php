@@ -18,7 +18,7 @@ class CreateFarmsTable extends Migration
             $table->string('owner');
             $table->string('region');
             $table->string('district');
-            $table->int('size');
+            $table->integer('size');
             $table->string('contacts');
             $table->timestamps();
         });

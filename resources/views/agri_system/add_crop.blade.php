@@ -264,7 +264,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{action('App\Http\Controllers\FarmController@store')}}" method="POST">
+              <form role="form" action="{{action('App\Http\Controllers\cropController@store')}}" method="POST">
               @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -287,7 +287,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Temperature Level </label>
-                    <input type="text" name="size" class="form-control" id="exampleInputPassword1" placeholder="Enter Centigrade Level">
+                    <input type="text" name="temperature_level" class="form-control" id="exampleInputPassword1" placeholder="Enter Centigrade Level">
                   </div>
                   <div class="form-group">
                     <label for="Fertilizer">Fertilizer Type</label>
@@ -299,6 +299,17 @@
                       <option value="potassium_fertilizer">Potassium Fertilizer</option>
                     </select>
                   </div>
+
+                  <div class="form-group">
+                    <label for="Season">Season</label>
+                    <select name="season" class="form-control">
+                      <option value="spring">Spring</option>
+                      <option value="summer">Summer</option>
+                      <option value="fall">Fall</option>
+                      <option value="winter">Winter</option>
+                    </select>
+                  </div>
+              
 
                 </div>
                 <!-- /.card-body -->

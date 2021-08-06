@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Resources\FarmResource;
 use App\Models\Farm;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Redirect;
 
 class FarmController extends Controller
 {
@@ -46,8 +45,8 @@ class FarmController extends Controller
        $farm->contacts=$request->input('contacts');
 
         if($farm->save()==TRUE){
-            $message="Farm Registered successfully";
-            return redirect('/add_farm')->with($message, 'The success message!');    
+            $message='Farm Registered successfully';
+            return redirect('/add_farm');    
         }
         else{
             echo 'adff';

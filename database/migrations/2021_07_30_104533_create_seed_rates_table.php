@@ -16,8 +16,8 @@ class CreateSeedRatesTable extends Migration
         Schema::create('seed_rates', function (Blueprint $table) {
             $table->id();
             $table->string('rate');
-            $table->int('userID');
-            $table->int('seedID');
+            $table->integer('userID');
+            $table->integer('seedID');
             $table->timestamps();
         });
     }

@@ -89,20 +89,12 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
+                Dashboard 
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-            </ul>
+         
           </li>
-
+          <!-- Farm panel -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -113,14 +105,144 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/add_farm" class="nav-link">
+                <a href="add_farm" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Farm </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view_farm" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Farms</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Crops panel -->
+          <li class="nav-item has-treeview">
+            <a href="crops" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Crops
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add_crop" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Crop </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="add_crop" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Crops</p>
                 </a>
               </li>
             </ul>
           </li>
  
+          <!-- Crops Pesticides panel -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Crops Pesticides
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add_crop_pesticide" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Crop Pesticide </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view_crops_pesticide" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Crops Pesticide</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Crops Pests -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Crops Pests
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add_crop_pests" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Crop Pests</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view_crops_pests" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Crops Pests</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Harvest panel -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Harvest
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add_harvest" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Harvest </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view_harvests" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Harvests</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Seed panel -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Seed
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add_seed" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Seed </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view_seeds" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Seeds</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -133,9 +255,16 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="d-flex justify-content-center" >
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Add Farm Details</h1> <hr />
+            
+            @isset($message)
+            <div class="alert alert-success">
+            <strong>{{$message}}</strong>
+            </div>
+            @endif
+
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title"></h3>
@@ -147,7 +276,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Farm Owner</label>
-                    <input type="text" name="owner" class="form-control" id="exampleInputEmail1" placeholder="Enter Full name">
+                    <input type="text" name="owner" class="form-control" id="exampleInputEmail1" placeholder="Enter Full name" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Region</label>
@@ -161,15 +290,15 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">District</label>
-                    <input type="text" name="district" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="text" name="district" class="form-control" id="exampleInputPassword1" placeholder="District" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Size </label>
-                    <input type="number" name="size" class="form-control" id="exampleInputPassword1" placeholder="(In Hectors">
+                    <input type="number" name="size" class="form-control" id="exampleInputPassword1" placeholder="In Hectors" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputFile">Contacts</label>
-                    <input type="text" name="contacts" class="form-control" id="exampleInputPassword1" placeholder="Eg: 717009009">
+                    <input type="text" name="contacts" class="form-control" id="exampleInputPassword1" placeholder="Eg: 717009009" required>
                   </div>
 
                 </div>
@@ -181,12 +310,7 @@
               </form>
             </div>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

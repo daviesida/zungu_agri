@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class seed extends Model
 {
     use HasFactory;
+
+    protected $table="seeds";
+
+    //  protected $fillable = ['row1','row2']
 }

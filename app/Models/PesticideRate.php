@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PesticideRate extends Model
 {
     use HasFactory;
+
+    protected $table="pesticide_rates";
+
+    //  protected $fillable = ['row1','row2']
 }

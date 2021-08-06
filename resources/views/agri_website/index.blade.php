@@ -63,7 +63,7 @@
 					<div class="login-box">
 						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
 							<option>Register Here</option>
-							<option><a href="/home">Sign In</a></option>
+							<option>Sign In</option>
 						</select>
 					</div>
                     <div class="text-slid-box">

@@ -136,7 +136,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="add_crop" class="nav-link">
+                <a href="view_crop" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Crops</p>
                 </a>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Resources\CropResource;
 use App\Models\Crop;
 use Illuminate\Http\Request;
+use DB;
+use App\Http\Controllers\Controller;
 
 class cropController extends Controller
 {
@@ -15,7 +17,8 @@ class cropController extends Controller
      */
     public function index()
     {
-        //
+        $crops = DB::select('select * from crops');
+        return view('agri_system.view_crop',['crops'=>$crops]);
     }
 
     /**

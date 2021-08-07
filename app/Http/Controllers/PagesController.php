@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    // Start Routes to website
+    // Start Routes to website************
     public function index(){
         return view('agri_website.index');
     }
 
-    // End Routes to website
+    // End Routes to website**************
 
     // Start Routes to System-------------------------------------------
     public function home(){
@@ -34,6 +34,12 @@ class PagesController extends Controller
         return view('agri_system.add_crop');
     }
 
+    public function view_crop(){
+        return view('agri_system.view_farm');
+    }
+
+
+    //Route to Crop Pesticide
     public function add_crop_pesticide(){
         return view('agri_system.add_pesticide');
     }

@@ -35,7 +35,7 @@ class PagesController extends Controller
     }
 
     public function view_crop(){
-        return view('agri_system.view_farm');
+        return view('agri_system.view_crop');
     }
 
 

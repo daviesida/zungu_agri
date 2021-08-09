@@ -111,7 +111,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view_farm" class="nav-link">
+                <a href="view_crop" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Farms</p>
                 </a>
@@ -287,7 +287,7 @@
                         <td>{{ $crop->soil_type }}</td>
                         <td>{{ $crop->rainfall }} </td>
                         <td>{{ $crop->temperature }}</td>
-                        <td>{{ $crop->Fertilizer }}</td>
+                        <td>{{ $crop->fertilizer }}</td>
                         <td>{{ $crop->period }}</td>
                       </tr> 
                         @endforeach                    

@@ -274,11 +274,11 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Soil Type</label>
                     <select name="soil_type" class="form-control">
-                      <option value="sand_soil">Sand Soil</option>
-                      <option value="clay_soil">Clay Soil</option>
-                      <option value="silt_soil">Silt Soil</option>
-                      <option value="chalk_soil">Chalk Soil</option>
-                      <option value="loam_soil">Loam Soil</option>
+                      <option value="sand">Sand Soil</option>
+                      <option value="clay">Clay Soil</option>
+                      <option value="silt">Silt Soil</option>
+                      <option value="chalk">Chalk Soil</option>
+                      <option value="loam">Loam Soil</option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -292,11 +292,11 @@
                   <div class="form-group">
                     <label for="Fertilizer">Fertilizer Type</label>
                     <select name="fertilizer" class="form-control">
-                      <option value="organic_fertilizer">Organic Fertilizer</option>
-                      <option value="inorganic_fertilizer">Inorganic Fertilizer</option>
-                      <option value="nitrogen_fertilizer">Nitrogen Fertilizer</option>
-                      <option value="phosphate_fertilizer">Phosphate Fertilizer</option>
-                      <option value="potassium_fertilizer">Potassium Fertilizer</option>
+                      <option value="organic">Organic Fertilizer</option>
+                      <option value="inorganic">Inorganic Fertilizer</option>
+                      <option value="nitrogen">Nitrogen Fertilizer</option>
+                      <option value="phosphate">Phosphate Fertilizer</option>
+                      <option value="potassium">Potassium Fertilizer</option>
                     </select>
                   </div>
 

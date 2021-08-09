@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\FarmController;
+use App\Http\Controllers\cropController;
+use App\Http\Controllers\CropPesticideController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
@@ -19,14 +21,30 @@ Route::get('/home', [PagesController::class, 'home']);
 
 //Farm Routes
 Route::get('/add_farm', [PagesController::class, 'add_farm']);
-Route::get('/view_farm', [PagesController::class, 'view_farm']);
+Route::get('/view_farm',[FarmController::class,'index']);
+Route::post('/add_farm',[FarmController::class,'store']);
+Route::get('/farms/{id}',[FarmController::class,'show']);
+Route::put('/farms/{id}',[FarmController::class,'update']);
+Route::delete('/farms/{id}',[FarmController::class,'destroy']);
 
 //Crop Routes
 Route::get('/add_crop', [PagesController::class, 'add_crop']);
-Route::get('/view_crop', [PagesController::class, 'view_crop']);
+Route::get('view_crop',[cropController::class,'index']);
+Route::post('/add_crop',[cropController::class,'store']);
+Route::get('/crop/{id}',[cropController::class,'show']);
+Route::put('/crop/{id}',[cropController::class,'update']);
+Route::delete('/crop/{id}',[cropController::class,'destroy']);
+
 
 //Crop Pesticide
 Route::get('/add_crop_pesticide', [PagesController::class, 'add_crop_pesticide']);
 Route::get('/add_crop_pests', [PagesController::class, 'add_crop_pests']);
 Route::get('/add_seed', [PagesController::class, 'add_seed']);
 
+
+//Routes to CropPesticides Controller
+Route::get('/crop',[cropPesticideController::class,'index']);
+Route::post('/add_crop_pesticide',[cropPesticideController::class,'store']);
+Route::get('/crop_pesticide/{id}',[cropPesticideController::class,'show']);
+Route::put('/crop_pesticide/{id}',[cropPesticideController::class,'update']);
+Route::delete('/crop_pesticide/{id}',[cropPesticideController::class,'destroy']);

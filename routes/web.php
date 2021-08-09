@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\HarvestController;
 use App\Http\Controllers\FarmController;
 use App\Http\Controllers\cropController;
 use App\Http\Controllers\CropPesticideController;
@@ -48,3 +49,11 @@ Route::post('/add_crop_pesticide',[cropPesticideController::class,'store']);
 Route::get('/crop_pesticide/{id}',[cropPesticideController::class,'show']);
 Route::put('/crop_pesticide/{id}',[cropPesticideController::class,'update']);
 Route::delete('/crop_pesticide/{id}',[cropPesticideController::class,'destroy']);
+
+
+//Harvest Routes
+Route::get('add_harvest', [HarvestController::class, 'add_harvest']);
+Route::get('view_harvest',[HarvestController::class,'index']);
+Route::get('/harvest/{id}',[HarvestController::class,'show']);
+Route::put('/harvest/{id}',[HarvestController::class,'update']);
+Route::delete('/harvest/{id}',[HarvestController::class,'destroy']);

@@ -15,6 +15,9 @@ class CreateHarvestsTable extends Migration
     {
         Schema::create('harvests', function (Blueprint $table) {
             $table->id();
+            $table->integer('cropID');
+            $table->string('tonne');
+            $table->string('year');
             $table->timestamps();
         });
     }

@@ -257,22 +257,26 @@
       <div class="container-fluid">
         <div class="d-flex justify-content-center" >
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Farm Details</h1> <hr />
+            <h1 class="m-0 text-dark">Add Harvest</h1> <hr />
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title"></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{action('App\Http\Controllers\FarmController@store')}}" method="POST">
+              <form role="form" action="{{action('App\Http\Controllers\HarvestController@store')}}" method="POST">
               @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Farm Owner</label>
-                    <input type="text" name="owner" class="form-control" id="exampleInputEmail1" placeholder="Enter Full name">
+                    <label for="crop_name">Crop Name</label>
+                    <select name="crop_name" class="form-control">
+                      @foreach ($crop as $cropname)
+                      <option value="{{ $cropname->id }}">{{ $cropname->crop_name }}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Region</label>
+                    <label for="exampleInputPassword1">Year</label>
                     <select name="region" class="form-control">
                       <option value="Morogoro">Morogoro</option>
                       <option value="Mbeya">Mbeya</option>

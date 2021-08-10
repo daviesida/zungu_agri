@@ -59,3 +59,4 @@ Route::post('/add_harvest',[harvestController::class,'store']);
 Route::get('/harvest/{id}',[harvestController::class,'show']);
 Route::put('/harvest/{id}',[harvestController::class,'update']);
 Route::delete('/harvest/{id}',[harvestController::class,'destroy']);
+Route::get('/harvest_graph',[harvestController::class, 'harvest_chart']); // For Harvest Chart

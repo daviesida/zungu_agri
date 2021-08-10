@@ -17,16 +17,26 @@ class HarvestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //This function purposely to give Crop name on Harvest form
     {
         $crops = Crop::all();
         return view('agri_system.add_harvest', compact('crops'));
     }
 
-    public function view_harvest()
+    public function view_harvest() //This function purposely to show Harvests in table format
     {
         $harvests = Harvest::all();
         return view('agri_system.view_harvest', compact('harvests'));
+    }
+
+    public function harvest_graph() //This function purposely to show Harvests in graph format
+    {
+        $harvest_data = Harvest::select(\DB::raw("COUNT(*) as count"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(\DB::raw("Month(created_at)"))
+                    ->pluck('count');
+          
+        return view('view_harvest', compact('harvest_data'));
     }
 
     /**
@@ -53,21 +63,33 @@ class HarvestController extends Controller
         foreach ($cropname as $cropname)
             $cropname=$cropname->crop_name;
         
-
         $harvest= new Harvest();
+        $cropYear=$request->input('year')."_".$request->input('crop_id'); //variable that concatinate year and cropid
+        
+        $cropYR = Harvest::where('CropID_year','=', $cropYear)->first();
 
-        $harvest->cropID=$request->input('crop_id');
-        $harvest->Crop_name=$cropname;
-        $harvest->tonne=$request->input('tonne');
-        $harvest->year=$request->input('year');
- 
-         if($harvest->save()==TRUE){
-             $message='Crop Registered successfully';
-             return redirect('view_harvest');    
-         }
-         else{
-             echo 'adff';
-         }
+        //Check if cropYear Exist
+        if ($cropYR === null) {
+            $harvest->cropID=$request->input('crop_id');
+            $harvest->Crop_name=$cropname;
+            $harvest->tonne=$request->input('tonne');
+            $harvest->year=$request->input('year');
+            $harvest->CropID_year=$cropYear;
+    
+            if($harvest->save()==TRUE){
+                echo "<script> alert('Harvest Information is inserted succesful');
+                    window.location.replace('view_harvest');
+                 </script>";
+                
+            }
+            else{
+                echo 'adff';
+            }
+        } else {
+            echo "<script> alert('Inserted Harvest Information is already exist');
+                    window.location.replace('add_harvest');
+                 </script>";
+        }   
     }
 
     /**

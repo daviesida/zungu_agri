@@ -212,7 +212,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view_harvests" class="nav-link">
+                <a href="view_harvest" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Harvests</p>
                 </a>

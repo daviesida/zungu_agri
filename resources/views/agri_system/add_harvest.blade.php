@@ -211,7 +211,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view_harvests" class="nav-link">
+                <a href="view_harvest" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Harvests</p>
                 </a>
@@ -269,34 +269,28 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="crop_name">Crop Name</label>
-                    <select name="crop_name" class="form-control">
-                      @foreach ($crop as $cropname)
+                    <select name="crop_id" class="form-control">
+                      @foreach ($crops as $cropname)
                       <option value="{{ $cropname->id }}">{{ $cropname->crop_name }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Year</label>
-                    <select name="region" class="form-control">
-                      <option value="Morogoro">Morogoro</option>
-                      <option value="Mbeya">Mbeya</option>
-                      <option value="Tanga">Tanga</option>
-                      <option value="Mwanza">Mwanza</option>
-                      <option value="Mtwara">Mtwara</option>
+                    <select name="year" class="form-control">
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
                     </select>
                   </div>
+
                   <div class="form-group">
-                    <label for="exampleInputFile">District</label>
-                    <input type="text" name="district" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="exampleInputFile">Tonnes </label>
+                    <input type="number" name="tonne" class="form-control" id="exampleInputPassword1" required>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Size </label>
-                    <input type="number" name="size" class="form-control" id="exampleInputPassword1" placeholder="(In Hectors">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Contacts</label>
-                    <input type="text" name="contacts" class="form-control" id="exampleInputPassword1" placeholder="Eg: 717009009">
-                  </div>
+
 
                 </div>
                 <!-- /.card-body -->

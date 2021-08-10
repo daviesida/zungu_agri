@@ -111,7 +111,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view_farm" class="nav-link">
+                <a href="view_crop" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Farms</p>
                 </a>
@@ -252,86 +252,85 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-center" >
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Add Seed Details</h1> <hr />
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title"></h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form" action="{{action('App\Http\Controllers\FarmController@store')}}" method="POST">
-              @csrf
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Seed Name</label>
-                    <input type="text" name="seed_name" class="form-control" id="exampleInputEmail1" placeholder="Enter Seed name">
+     <!-- Main content -->
+     <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Crop Records</h3>
+                </div>
+                <!-- ./card-header -->
+                <div class="card">
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th>Harvest ID</th>
+                        <th>Crop ID</th>
+                        <th>Crop Name</th>
+                        <th>Tonnes</th>
+                        <th>Year</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($harvests as $harvest)
+                      <tr>
+                        <td>{{ $harvest->id }}</td>
+                        <td>{{ $harvest->cropID }}</td>
+                        <td>{{ $harvest->Crop_name }}</td>
+                        <td>{{ $harvest->tonne }}</td>
+                        <td>{{ $harvest->year }} </td>
+                      </tr> 
+                        @endforeach                    
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Harvest ID</th>
+                          <th>Crop ID</th>
+                          <th>Crop Name</th>
+                          <th>Tonnes</th>
+                          <th>Year</th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Seed Supplier</label>
-                    <input type="text" name="seed_supplier" class="form-control" id="exampleInputEmail1" placeholder="Enter Seed Supplier">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Seed Description</label>
-                    <input type="text" name="seed_desc" class="form-control" id="exampleInputEmail1" placeholder="Enter Seed Description">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Crop name</label>
-                    <select name="crop_id" class="form-control">
-                      <option value="crop_id1">crop_id</option>
-                      <option value="crop_id2">crop_id</option>
-                      <option value="crop_id3">crop_id</option>
-                      <option value="crop_id4">crop_id</option>
-                      <option value="crop_id5">crop_id</option>
-                    </select>
-                  </div>
+                  <!-- /.card-body -->
                 </div>
                 <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+              </div>
+              <!-- /.card -->
+  
             </div>
-          </div><!-- /.col -->
-
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
-
-          </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+              <!-- Form Element sizes -->
+              <div class="card card-success">
+                <div class="card-header">
+                  <h3 class="card-title">Different Height</h3>
+                </div>
+                <div class="card-body">
+                  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+                  <br>
+                  <input class="form-control" type="text" placeholder="Default input">
+                  <br>
+                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!--/.col (right) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -380,6 +379,7 @@
 <script src="{{asset('agri_system/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('agri_system/dist/js/adminlte.js')}}"></script>
+<script src="{{asset('agri_system/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('agri_system/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->

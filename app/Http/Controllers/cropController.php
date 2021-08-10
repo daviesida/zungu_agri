@@ -50,7 +50,7 @@ class cropController extends Controller
  
          if($crop->save()==TRUE){
              $message='Crop Registered successfully';
-             return redirect('add_crop');    
+             return redirect('view_crop');    
          }
          else{
              echo 'adff';

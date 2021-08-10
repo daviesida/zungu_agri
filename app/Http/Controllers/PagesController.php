@@ -57,6 +57,10 @@ class PagesController extends Controller
         return view('agri_system.add_harvest');
     }
 
+    public function view_harvest(){
+        return view('agri_system.add_harvest');
+    }
+
 
     // End Routes to System----------------------------------------
     

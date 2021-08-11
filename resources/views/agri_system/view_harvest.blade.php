@@ -305,9 +305,9 @@
                   <h3 class="card-title">Different Height</h3>
                 </div>
                 <div class="card-body">
-                  <script>
-                      
-                  </script>
+                    <!-- Harvest Graph Script-->
+                    <div id="container"></div>
+                    
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -359,6 +359,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('agri_system/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -371,13 +372,34 @@
       "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": true,
+      "autoWidth": false,
       "responsive": true,
     });
   });
 </script>
 
-<!-- Harvest Graph script -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
+                    <script>
+                        var harvestGraph= <?php echo json_encode($graph) ?>;
+                        Highcharts.chart('container',{
+                          title:{
+                            text:"A chart for Maize Harvest"
+                          },
+                          xAxis:{
+                            categories: ['2015','2016','2017','2018','2019','2020','2021']
+                          },
+                          yAxis:{
+                            title:{
+                              text:"Tonnes Produced"
+                            }
+                          },
+                          series:[{
+                            name:"Tonne",
+                            data:harvestGraph
+                          }],
+
+                        });
+                    </script>
+
 </body>
 </html>

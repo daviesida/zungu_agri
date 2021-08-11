@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\CropResource;
 use App\Models\Crop;
+use App\Models\User;
 use App\Http\Resources\HarvestResource;
 use App\Models\Harvest;
 use Illuminate\Http\Request;
@@ -26,17 +27,11 @@ class HarvestController extends Controller
     public function view_harvest() //This function purposely to show Harvests in table format
     {
         $harvests = Harvest::all();
-        return view('agri_system.view_harvest', compact('harvests'));
-    }
-
-    public function harvest_graph() //This function purposely to show Harvests in graph format
-    {
-        $harvest_data = Harvest::select(\DB::raw("COUNT(*) as count"))
-                    ->whereYear('created_at', date('Y'))
-                    ->groupBy(\DB::raw("Month(created_at)"))
-                    ->pluck('count');
-          
-        return view('view_harvest', compact('harvest_data'));
+        $graph=Harvest::select(DB::raw("count(tonne) as tonne"))
+                        ->Where('Crop_name','=','Maize')
+                        ->groupBy(DB::raw("year"))
+                        ->pluck("tonne");
+        return view('agri_system.view_harvest', compact('harvests','graph'));
     }
 
     /**
